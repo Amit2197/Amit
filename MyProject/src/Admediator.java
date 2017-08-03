@@ -11,8 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 
-@WebServlet(name = "m1", urlPatterns = { "/m1" })
-public class Mediator extends HttpServlet {
+@WebServlet(name = "m2", urlPatterns = { "/m2" })
+public class Admediator extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     
@@ -24,23 +24,13 @@ public class Mediator extends HttpServlet {
 		response.setHeader("Cache-control","no-store");
 		response.setHeader("Expires","0");
 		response.setDateHeader("Expires",-1);
-		String name=(String)s.getAttribute("name");
-		if(name==null) {
-			pw.print("<html><body bgcolor=#d9dee2 size=16px font=Arial>");
-	        pw.println("<h1>Invalid password</h1>");
-	        pw.print("<a href='Student.jsp'>try again</a><br>");
-	        pw.print("<a href='HomePage.jsp'>HOME</a>");
-	        pw.print("</html></body>");
-		}
-		else {
-			
-			
-			pw.println("<b>Welcome  <b>"+name);
-			pw.println("<br><a href='Feedback.html'>Go To Feedback Page</a>");
+		String username=(String)s.getAttribute("username");
+		if(username==null) {
+			pw.println("<br><a href='Ad_Fe_Show.jsp'>Go To User Feedback Page</a>");
+			pw.println("<br><a href='Ad_Re_Show.jsp'>Go To User Registration Page</a>");
 			pw.println("<br><a href='Logout'>Logout</a>");
-			
-		
 		}
+		
 	}
 
 }

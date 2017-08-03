@@ -4,14 +4,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Not Logged</title>
 </head>
-<body>
-<b>Welcome ADMIN</b>
-<div><b>
-<a href="Ad_Fe_Show.jsp">Go To User Feedback Page</a><br>
-<a href="Ad_Re_Show.jsp"><button>Go To User Registration Page</button></a><br>
-<a href="Logout"><button>Logout</button></a>
-</b></div>
+<body background="college1.jpg">
+<center>
+<h2>You are not logged in<br/></h2>
+<h3><a href="Student.jsp">Please Login</a></h3>
+</center>
 </body>
 </html>

@@ -12,32 +12,31 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 
-@WebServlet(name = "Ad", urlPatterns = { "/Ad" })
-public class Adminlodin extends HttpServlet {
+@WebServlet(name = "U3", urlPatterns = { "/U3" })
+public class update2 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String u=request.getParameter("u3");
-		String p=request.getParameter("p3");
-		PrintWriter out=response.getWriter();
+		String n=request.getParameter("n1");
+		String c=request.getParameter("c1");
 		HttpSession s=request.getSession();
-		s.setAttribute("Username",u);
+		PrintWriter out=response.getWriter();
+		s.setAttribute("name",n);
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-			Connection c=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","PROJECT","1234");
-			Statement st=c.createStatement();
-			ResultSet rs=st.executeQuery("select USERNAME,PASSWORD from ADMIN where USERNAME='"+u+"'and PASSWORD='"+p+"'");
-			
+			Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","PROJECT","1234");
+			PreparedStatement pst=conn.prepareStatement("update URNO,DEPARTMENT from SIGN_UP where NAME='"+n+"'and CRNO='"+c+"'");
+			pst.setString(5,Urno);
+			pst.setString(6,Department);
 		if(rs.next())
 		{
-			response.sendRedirect("m2");
+			response.sendRedirect("U2");
 		}
 		else
 		{
 			out.print("<html><body bgcolor=#d9dee2 size=16px font=Arial>");
-	        out.println("<h1>Invalid password</h1>");
-	        out.print("<a href='Adminlogin.jsp'>try again</a><br>");
-	        out.print("<a href='HomePage.jsp'>Go to Home</a>");
+	        out.println("<h1 colorwhite>Invalid password</h1>");
+	        out.print("<a href='update.html'>try again</a><br>");
 	        out.print("</html></body>");
 			
 		}

@@ -7,11 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<b>Welcome ADMIN</b>
-<div><b>
-<a href="Ad_Fe_Show.jsp">Go To User Feedback Page</a><br>
-<a href="Ad_Re_Show.jsp"><button>Go To User Registration Page</button></a><br>
-<a href="Logout"><button>Logout</button></a>
-</b></div>
+
 </body>
 </html>

@@ -17,25 +17,25 @@ public class Login extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String u=request.getParameter("u1");
-		String p=request.getParameter("p1");
-		PrintWriter out=response.getWriter();
+		String n=request.getParameter("n1");
+		String r=request.getParameter("r1");
 		HttpSession s=request.getSession();
-		s.setAttribute("Username",u);
+		PrintWriter out=response.getWriter();
+		s.setAttribute("name",n);
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-			Connection c=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","Amit_2197","1234");
+			Connection c=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","PROJECT","1234");
 			Statement st=c.createStatement();
-			ResultSet rs=st.executeQuery("select USERNAME,PASSWORD from Table00 where USERNAME='"+u+"'and PASSWORD='"+p+"'");
+			ResultSet rs=st.executeQuery("select NAME,CRNO from SIGN_UP where NAME='"+n+"'and CRNO='"+r+"'");
 			
 		if(rs.next())
 		{
-			response.sendRedirect("medium");
+			response.sendRedirect("m1");
 		}
 		else
 		{
 			out.print("<html><body bgcolor=#d9dee2 size=16px font=Arial>");
-	        out.println("<h1>Invalid password</h1>");
+	        out.println("<h1 colorwhite>Invalid password</h1>");
 	        out.print("<a href='Student.jsp'>try again</a><br>");
 	        out.print("<a href='HomePage.jsp'>Go to Home</a>");
 	        out.print("</html></body>");

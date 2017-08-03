@@ -11,8 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 
-@WebServlet(name = "m1", urlPatterns = { "/m1" })
-public class Mediator extends HttpServlet {
+@WebServlet(name = "U2", urlPatterns = { "/U2" })
+public class UpdateMediator2 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     
@@ -28,15 +28,14 @@ public class Mediator extends HttpServlet {
 		if(name==null) {
 			pw.print("<html><body bgcolor=#d9dee2 size=16px font=Arial>");
 	        pw.println("<h1>Invalid password</h1>");
-	        pw.print("<a href='Student.jsp'>try again</a><br>");
-	        pw.print("<a href='HomePage.jsp'>HOME</a>");
+	        pw.print("<a href='Update.html'>try again</a><br>");
 	        pw.print("</html></body>");
 		}
 		else {
 			
 			
 			pw.println("<b>Welcome  <b>"+name);
-			pw.println("<br><a href='Feedback.html'>Go To Feedback Page</a>");
+			pw.println("<br><a href='Update.jsp'>Go To Update Page</a>");
 			pw.println("<br><a href='Logout'>Logout</a>");
 			
 		

@@ -18,27 +18,32 @@ public class RegistereServlet extends HttpServlet {
     
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String Name=request.getParameter("n1");
-		String Username=request.getParameter("u1");
-		String Password=request.getParameter("p1");
-		String Gender=request.getParameter("g1");
-		String Language=request.getParameter("l1");
-		String City=request.getParameter("c1");
+		String Fname=request.getParameter("f1");
+		String Dob=request.getParameter("d1");
+		String Crno=request.getParameter("c1");
+		String Urno=request.getParameter("u1");
+		String Department=request.getParameter("d2");
+		String Email=request.getParameter("e1");
+		String Mobile=request.getParameter("m1");
 		PrintWriter out=response.getWriter();
 		try{
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-			Connection c=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521","Amit_2197","1234");
-			PreparedStatement pst=c.prepareStatement("insert into Table00(Name,Username,Password,Gender,Language,City) values(?,?,?,?,?,?)");
+			Connection c=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521","PROJECT","1234");
+			PreparedStatement pst=c.prepareStatement("insert into SIGN_UP(Name,Fname,Dob,Crno,Urno,Department,Email,Mobile) values(?,?,?,?,?,?,?,?)");
 			pst.setString(1,Name);
-			pst.setString(2,Username);
-			pst.setString(3,Password);
-			pst.setString(4,Gender);
-			pst.setString(5,Language);
-			pst.setString(6,City);
+			pst.setString(2,Fname);
+			pst.setString(3,Dob);
+			pst.setString(4,Crno);
+			pst.setString(5,Urno);
+			pst.setString(6,Department);
+			pst.setString(7,Email);
+			pst.setString(8,Mobile);
 			int i=pst.executeUpdate();
 			if(i>0){
-				out.print("<html><body bgcolor=#d9dee2 size=16px font=Arial>");
+				   out.print("<html><body bgcolor=#d9dee2 size=16px font=Arial style='background-color:#d3d3d3;'>");
+				   out.print("<LINK rel='StyleSheet' href='css/bootstrap.css' TYPE='text/css'>"); 
 				   out.print("<h1>Registration is successful<h1>");
-				   out.print("<a href='Student.jsp'> Go to Login</a>"); 
+				   out.print("<a href='Student.jsp'> <b>Go to Login</b></a>"); 
 				   out.print("</html></body>"); 
 			}
 			c.close();

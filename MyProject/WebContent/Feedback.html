@@ -1,11 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
-<title>SignUp</title>
+<meta charset="ISO-8859-1">
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
+<title>Insert title here</title>
 <style type="text/css">
 body {
     background:url("images/book.jpg");
@@ -114,7 +112,7 @@ text-shadow: 3px 2px lightblue;
 </style>
 </head>
 <body>
-<form  name="" action="" method="post">
+<form action="F2" method="post onclick="return validate();">
 <div class="login">
 <h4 style="font-size:30px; font-family:Elephant; color:red">Student  Feedback Form</h4>
 <label>Student's Roll No:</label><input type="text"  name="rn"><br>
@@ -135,7 +133,7 @@ text-shadow: 3px 2px lightblue;
   			<option value="6">EE</option>
   			<option value="7">AEIE</option>
 			</select><br>
-<label>Faculty Name:</label><select name="d3" id="select2">
+<label>Faculty Name:</label><select name="f1" id="select2">
 			<option value=" "></option>
   			<option value="1">Dr. Sanjay Biswas</option>
   			<option value="1">Dr. Dipendra Nath Ghosh</option>
@@ -352,7 +350,7 @@ $("#select1").change(function() {
    <input type="radio" name="r4" value="Good"><b>Good</b>
    <input type="radio" name="r4" value="Very Good"><b>Very Good</b>
    <input type="radio" name="r4" value="Excellent"><b>Excellent</b><br>
-  <label>Other Feedback:</label><textarea name="t1"></textarea><br>
+  <label>Other Feedback:</label><textarea name="o1"></textarea><br>
    <input type="submit" value="Submit">
    <input type="reset" value="Reset">
    </div>
